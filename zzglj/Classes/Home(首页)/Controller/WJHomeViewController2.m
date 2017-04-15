@@ -9,11 +9,15 @@
 #import "WJHomeViewController2.h"
 #import "ImagePlayerView.h"
 #import "WJSysTool.h"
+#import "WJRollImage.h"
+#import "WJRollImageReturn.h"
+#import "WJRollImageParam.h"
+#import "WJRollImageTool.h"
 @interface WJHomeViewController2 ()<ImagePlayerViewDelegate>
 @property (weak, nonatomic) IBOutlet ImagePlayerView *imagePlayerView;
 
 
-@property (nonatomic, strong) NSArray *imageURLs;
+@property (nonatomic, strong) NSMutableArray *imageURLs;
 @property (nonatomic, strong) NSCache *imageCache;
 
 @property (weak, nonatomic) IBOutlet UIView *gljgk;
@@ -23,6 +27,9 @@
 @property (weak, nonatomic) IBOutlet UIView *flfg;
 @property (weak, nonatomic) IBOutlet UIView *sxda;
 @property (weak, nonatomic) IBOutlet UIView *dazt;
+
+
+@property (nonatomic, strong) NSArray *arrayRollImages;
 @end
 
 @implementation WJHomeViewController2
@@ -41,7 +48,9 @@
     [titleView setTitleEdgeInsets:UIEdgeInsetsMake(0, 10, 0, 0)];
     [titleView setUserInteractionEnabled:NO];
     self.navigationItem.titleView = titleView;
-    [self setupImagePlayerView];
+    
+    [self loadRollImage];
+    //[self setupImagePlayerView];
     
     [self setupUIView];
 }
@@ -104,11 +113,11 @@
 {
     _imageCache = [NSCache new];
     
-    self.imageURLs = @[[NSURL URLWithString:@"http://42.96.167.141:8012/App/YJfile/yjattached/image/20170310/20170310172355_2228.jpg"],
-                       [NSURL URLWithString:@"http://42.96.167.141:8012/App/YJfile/yjattached/image/20170310/20170310172252_8454.jpg"],
-                       [NSURL URLWithString:@"http://42.96.167.141:8012/App/YJfile/yjattached/image/20170310/20170310172140_4989.jpg"],
-                       [NSURL URLWithString:@"http://42.96.167.141:8012/App/YJfile/yjattached/image/20170310/20170310172054_4658.jpg"],
-                       [NSURL URLWithString:@"http://42.96.167.141:8012/App/YJfile/yjattached/image/20170310/20170310171954_6510.jpg"]];
+//    self.imageURLs = @[[NSURL URLWithString:@"http://42.96.167.141:8012/App/YJfile/yjattached/image/20170310/20170310172355_2228.jpg"],
+//                       [NSURL URLWithString:@"http://42.96.167.141:8012/App/YJfile/yjattached/image/20170310/20170310172252_8454.jpg"],
+//                       [NSURL URLWithString:@"http://42.96.167.141:8012/App/YJfile/yjattached/image/20170310/20170310172140_4989.jpg"],
+//                       [NSURL URLWithString:@"http://42.96.167.141:8012/App/YJfile/yjattached/image/20170310/20170310172054_4658.jpg"],
+//                       [NSURL URLWithString:@"http://42.96.167.141:8012/App/YJfile/yjattached/image/20170310/20170310171954_6510.jpg"]];
     
     self.imagePlayerView.imagePlayerViewDelegate = self;
     
@@ -129,6 +138,37 @@
     
     [self.imagePlayerView reloadData];
 }
+#pragma mark - 初始化
+- (NSMutableArray *)imageURLs
+{
+    if (_imageURLs == nil) {
+        _imageURLs = [NSMutableArray array];
+    }
+    return _imageURLs;
+}
+/**
+ *  加载最新的微博数据
+ */
+- (void)loadRollImage
+{
+    // 1.封装请求参数
+    WJRollImageParam *param = [WJRollImageParam param];
+    //param.lmid = self.lmid;
+    param.lmid = @257;
+    // 2.加载新闻列表
+    [WJRollImageTool rollImageWithParam:param success:^(WJRollImageReturn *result) {
+        // 获得最新的新闻News数组
+        _arrayRollImages = result.Details;
+        for (WJRollImage *rollimage in _arrayRollImages) {
+            WJLog(@"%@", rollimage.AdPath );
+            NSString *path =[NSString stringWithFormat:@"http://42.96.167.141:8012%@",rollimage.AdPath];
+            [self.imageURLs addObject:[NSURL URLWithString:path]];
+            [self setupImagePlayerView];
+        }
+    } failure:^(NSError *error) {
+        WJLog(@"请求失败--%@", error);
+    }];
+}
 
 
 - (void)didReceiveMemoryWarning {
@@ -147,7 +187,8 @@
 {
     // recommend to use SDWebImage lib to load web image
     //    [imageView setImageWithURL:[self.imageURLs objectAtIndex:index] placeholderImage:nil];
-    
+    if(self.imageURLs.count > 0)
+    {
     NSURL *imageURL = [self.imageURLs objectAtIndex:index];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         UIImage *image = [self.imageCache objectForKey:imageURL.absoluteString];
@@ -161,6 +202,7 @@
             imageView.image = image;
         });
     });
+    }
 }
 
 - (void)imagePlayerView:(ImagePlayerView *)imagePlayerView didTapAtIndex:(NSInteger)index
