@@ -5,8 +5,8 @@
 //
 
 #import "WJTabBarViewController.h"
-#import "WJHomeViewController.h"
-#import "WJServicesViewController.h"
+#import "WJHomeViewController2.h"
+#import "WJContactUsViewController.h"
 #import "WJMineViewController.h"
 #import "WJSettingsViewController.h"
 #import "WJNavigationController.h"
@@ -16,8 +16,8 @@
 
 
 @interface WJTabBarViewController () //<WJTabBarDelegate, UITabBarControllerDelegate>
-@property (nonatomic, weak) WJHomeViewController *home;
-@property (nonatomic, weak) WJServicesViewController *services;
+@property (nonatomic, weak) WJHomeViewController2 *home;
+@property (nonatomic, weak) WJContactUsViewController *contactus;
 @property (nonatomic, weak) WJSettingsViewController *settings;
 @property (nonatomic, weak) WJMineViewController *mine;
 @property (nonatomic, weak) UIViewController *lastSelectedViewContoller;
@@ -78,14 +78,16 @@
     self.lastSelectedViewContoller = home;
     
     WJMineViewController *mine = [[WJMineViewController alloc] init];
-    mine.strUrl = WJUrlGLJ;
+    mine.strUrl = WJUrlGRZX;
     mine.bMainWeb = YES;
     [self addOneChlildVc:mine title:@"个人中心" imageName:@"ic_tab_account_normal" selectedImageName:@"ic_tab_account_press"];
     self.mine= mine;
     
-    WJServicesViewController *services = [[WJServicesViewController alloc] init];
-    [self addOneChlildVc:services title:@"便民服务" imageName:@"ic_tab_contact_normal" selectedImageName:@"ic_tab_contact_press"];
-    self.services = services;
+    WJContactUsViewController *contactus = [[WJContactUsViewController alloc] init];
+    contactus.strUrl = WJUrlLXWM;
+    contactus.bMainWeb = YES;
+    [self addOneChlildVc:contactus title:@"联系我们" imageName:@"ic_tab_contact_normal" selectedImageName:@"ic_tab_contact_press"];
+    self.contactus = contactus;
     
     WJSettingsViewController *settings = [[WJSettingsViewController alloc] init];
     [self addOneChlildVc:settings title:@"设置" imageName:@"ic_tab_setting_normal" selectedImageName:@"ic_tab_setting_press"];

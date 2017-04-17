@@ -50,6 +50,11 @@
 #define WJColorDKZN WJColor(253, 170, 74)
 /** 提取指南 */
 #define WJUrlTQZN @"http://2015.zzglj.gov.cn/wap866.html"
+
+#define WJUrlDASGK @"http://42.96.167.141:8012/app/Mobile/Normal/Content.aspx?NewsId=2"
+#define WJUrlDACX @"http://42.96.167.141:8012/App/mobile/ArchFind/"
+#define WJUrlGRZX @"http://42.96.167.141:8012/app/Mobile/Normal/login.html"
+#define WJUrlLXWM @"http://42.96.167.141:8012/app/Mobile/Normal/Content.aspx?NewsId=3"
 #define WJColorTQZN WJColor(31, 193, 179);
 /** 政策法规 */
 #define WJColorZCFG WJColor(98, 194, 3)

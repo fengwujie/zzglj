@@ -13,6 +13,8 @@
 #import "WJRollImageReturn.h"
 #import "WJRollImageParam.h"
 #import "WJRollImageTool.h"
+#import "WJWebViewController.h"
+
 @interface WJHomeViewController2 ()<ImagePlayerViewDelegate>
 @property (weak, nonatomic) IBOutlet ImagePlayerView *imagePlayerView;
 
@@ -87,10 +89,18 @@
 -(void)dasgkClick:(id)sender
 {
     WJLog(@"dasgk");
+    WJWebViewController *webVC = [[WJWebViewController alloc] init];
+    webVC.strUrl = WJUrlDASGK;
+    webVC.title = @"档案室概况";
+    [self.navigationController pushViewController:webVC animated:YES];
 }
 -(void)dacxClick:(id)sender
 {
     WJLog(@"dacx");
+    WJWebViewController *webVC = [[WJWebViewController alloc] init];
+    webVC.strUrl = WJUrlDACX;
+    webVC.title = @"档案查询";
+    [self.navigationController pushViewController:webVC animated:YES];
 }
 -(void)wxdaClick:(id)sender
 {
