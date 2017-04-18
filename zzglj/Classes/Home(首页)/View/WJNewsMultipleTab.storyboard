@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4hC-lL-xMM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--News Multiple Tab View Controller-->
+        <scene sceneID="8QN-bI-acj">
+            <objects>
+                <viewController id="4hC-lL-xMM" customClass="WJNewsMultipleTabViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2bb-Ap-Xuh"/>
+                        <viewControllerLayoutGuide type="bottom" id="4k3-w4-htR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Oby-Cr-xR5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ne1-ft-OSc">
+                                <rect key="frame" x="0.0" y="20" width="375" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="ERI-Xt-kFP"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Ne1-ft-OSc" secondAttribute="trailing" id="2vF-Mc-wIP"/>
+                            <constraint firstItem="Ne1-ft-OSc" firstAttribute="leading" secondItem="Oby-Cr-xR5" secondAttribute="leading" id="T5g-IQ-BUv"/>
+                            <constraint firstItem="Ne1-ft-OSc" firstAttribute="top" secondItem="2bb-Ap-Xuh" secondAttribute="bottom" id="hkm-F2-EcY"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TTh-cs-uNp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-257" y="167"/>
+        </scene>
+    </scenes>
+</document>

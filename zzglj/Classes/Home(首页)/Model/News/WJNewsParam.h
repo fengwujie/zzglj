@@ -14,6 +14,10 @@
  *  (5为政策法规，7为办事指南)
  */
 @property (nonatomic, strong) NSNumber *lmid;
+/**
+ *  (5为政策法规，7为办事指南)
+ */
+@property (nonatomic, strong) NSNumber *lmid1;
 
 ///**	false	int64	若指定此参数，则返回ID比since_id大的微博（即比since_id时间晚的微博），默认为0。*/
 //@property (nonatomic, strong) NSNumber *since_id;
@@ -24,13 +28,21 @@
 /** false	int	单页返回的记录条数，最大不超过100，默认为20。*/
 @property (nonatomic, strong) NSNumber *size;
 /**
- *  表示获取时间大于mindate的数据
+ *  表示获取时间大于minid的数据
  */
-@property (nonatomic, copy) NSString *mindate;
+@property (nonatomic, copy) NSString *minid;
 /**
- *  表示获取时间小于maxdate的数据
+ *  表示获取时间小于maxid的数据
  */
-@property (nonatomic, copy) NSString *maxdate;
+@property (nonatomic, copy) NSString *maxid;
+/**
+ *  目前没用到，空值
+ */
+@property (nonatomic, copy) NSString *keyWord;
+/**
+ *  目前没用到，空值
+ */
+@property (nonatomic, copy) NSString *str;
 
 /**
  *  请求方法名，必填，各自调用类的时候赋值，如新闻列表自己的WJNewsTool类中

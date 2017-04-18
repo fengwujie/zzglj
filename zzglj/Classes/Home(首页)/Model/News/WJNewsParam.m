@@ -15,14 +15,14 @@
     return _size ? _size : @20;
 }
 
-- (NSString *)mindate
+- (NSString *)keyWord
 {
-    return _mindate ? _mindate : @"";
+    return _keyWord ? _keyWord : @"";
 }
 
-- (NSString *)maxdate
+- (NSString *)str
 {
-    return _maxdate ? _maxdate : @"";
+    return _str ? _str : @"";
 }
 
 - (id)init
