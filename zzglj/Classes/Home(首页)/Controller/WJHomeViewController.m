@@ -8,7 +8,7 @@
 
 #import "WJHomeViewController.h"
 #import "WJWebViewController.h"
-#import "WJNewsCommonViewController.h"
+#import "WJNewsSingleViewController.h"
 #import "NSDate+WJ.h"
 #import "WJSysTool.h"
 #import "WJGridButton.h"
@@ -329,13 +329,13 @@
         [self.navigationController pushViewController:webVC animated:YES];
     }
     else if ([button isEqual:self.zcfg]) {   //政策法规
-        WJNewsCommonViewController *newsVC = [[WJNewsCommonViewController alloc] init];
+        WJNewsSingleViewController *newsVC = [[WJNewsSingleViewController alloc] init];
         newsVC.lmid = @5;
         newsVC.title = button.titleLabel.text;
         [self.navigationController pushViewController:newsVC animated:YES];
     }
     else if ([button isEqual:self.bszn]) {  //办事指南
-        WJNewsCommonViewController *newsVC = [[WJNewsCommonViewController alloc] init];
+        WJNewsSingleViewController *newsVC = [[WJNewsSingleViewController alloc] init];
         newsVC.lmid = @7;
         newsVC.title = button.titleLabel.text;
         [self.navigationController pushViewController:newsVC animated:YES];

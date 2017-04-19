@@ -26,12 +26,12 @@
                              <lmid1>%@</lmid1>\
                              <minid>%@</minid>\
                              <maxid>%@</maxid>\
-                             <keyWork></keyWork>\
-                             <str></str>\
+                             <keyWork>%@</keyWork>\
+                             <str>%@</str>\
                              </%@>\
                              </soap12:Body>\
                              </soap12:Envelope>",
-                             param.methodName,param.size, param.lmid,param.lmid1,param.minid,param.maxid, param.methodName];
+                             param.methodName,param.size, param.lmid,param.lmid1,param.minid,param.maxid,param.keyWord,param.str, param.methodName];
     param.soapMessage = soapMessage;
     NSDictionary *params = [param mj_keyValues];
     

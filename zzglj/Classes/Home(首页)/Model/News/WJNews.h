@@ -18,10 +18,6 @@
  */
 @property (nonatomic, copy) NSString *FTitle;
 /**
- *  发布日期
- */
-@property (nonatomic, copy) NSString *Indate;
-/**
  *  链接地址，该字段如果是有填写则跳转到对应的页面(目前没有，服务器返回的是空值),
  */
 @property (nonatomic, copy) NSString *RedirectUrl;

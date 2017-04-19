@@ -1,26 +1,32 @@
 //
-//  WJCalculatorCell.m
+//  WJNewsViewCell.m
 //  zzglj
 //
-//  Created by fengwujie on 16/1/6.
-//  Copyright © 2016年 vision-soft. All rights reserved.
+//  Created by allen on 2017/4/19.
+//  Copyright © 2017年 vision-soft. All rights reserved.
 //
 
-#import "WJNewsCommonCell.h"
-#import "WJNews.h"
-@implementation WJNewsCommonCell
+#import "WJNewsViewCell.h"
+#import "UIImageView+WebCache.h"
+@interface WJNewsViewCell ()
+@property (weak, nonatomic) IBOutlet UIImageView *News_Litpic;
+@property (weak, nonatomic) IBOutlet UILabel *News_FTitle;
 
-#pragma mark - 初始化
+@end
+@implementation WJNewsViewCell
+
 + (instancetype)cellWithTableView:(UITableView *)tableView
 {
-    static NSString *ID = @"Calculator";
-    WJNewsCommonCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    static NSString *ID = @"News";
+    WJNewsViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (cell == nil) {
-        cell = [[WJNewsCommonCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:ID];
+        //cell = [[WJNewsViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+        //通过xib的名称加载自定义的cell
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"WJNewsViewCell" owner:self options:nil] lastObject];
+
     }
     return cell;
 }
-
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -41,37 +47,24 @@
 
 - (void)setNews:(WJNews *)news{
     _news = news;
+    /*
     self.textLabel.text = news.FTitle;
     //self.detailTextLabel.text = news.cIndate;
+    NSString *path = [NSString stringWithFormat:@"http://42.96.167.141:8012%@",news.Litpic];
+    [self.imageView sd_setImageWithURL:[NSURL URLWithString:path]];
+    */
+    self.News_FTitle.text = news.FTitle;
+    //self.detailTextLabel.text = news.cIndate;
+    NSString *path = [NSString stringWithFormat:@"http://42.96.167.141:8012%@",news.Litpic];
+    [self.News_Litpic sd_setImageWithURL:[NSURL URLWithString:path]];
 }
 
-#pragma mark - 调整子控件的位置
-- (void)layoutSubviews
+- (void)setFrame:(CGRect)frame
 {
-    [super layoutSubviews];
-    
-    //    if ([self.item isKindOfClass:[WJCommonCenterItem class]]) {
-    //        self.textLabel.centerX = self.width * 0.5;
-    //        self.textLabel.centerY = self.height * 0.5;
-    //    } else {
-    //        self.textLabel.x = 10;
-    /*
-    if (self.news) {
-        if (self.news.Indate) {
-            self.detailTextLabel.width = 100;
-            self.detailTextLabel.x = self.width - self.detailTextLabel.width - 10;
-            self.textLabel.width = self.width - self.detailTextLabel.width - 25;
-//            WJLog(@"textLabel.width--%f,self.width--%f,detailTextLabel.width---%f",self.textLabel.width,self.width,self.detailTextLabel.width);
-//            if ((self.textLabel.width) > (self.width - self.detailTextLabel.width - 10)) {
-//                self.textLabel.width = self.textLabel.width - self.detailTextLabel.width - 5;
-//                return;
-//            }
-        }
-    }
-     */
-//    // 调整子标题的x
-//    self.detailTextLabel.x = CGRectGetMaxX(self.textLabel.frame) + 5;
-    //    }
+    frame.origin.x = 10;//这里间距为10，可以根据自己的情况调整
+    frame.size.width -= 2 * frame.origin.x;
+    frame.size.height -= frame.origin.x;
+    [super setFrame:frame];
 }
 
 #pragma mark - setter
@@ -97,5 +90,16 @@
     }
 }
 
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    // Initialization code
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
+}
 
 @end

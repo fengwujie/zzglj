@@ -15,6 +15,15 @@
     return _size ? _size : @20;
 }
 
+- (NSString *)minid
+{
+    return _minid ? _minid : @"";
+}
+
+- (NSString *)maxid
+{
+    return _maxid ? _maxid : @"";
+}
 - (NSString *)keyWord
 {
     return _keyWord ? _keyWord : @"";

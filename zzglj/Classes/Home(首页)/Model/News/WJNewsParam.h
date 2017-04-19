@@ -11,11 +11,11 @@
 @interface WJNewsParam : NSObject
 
 /**
- *  (5为政策法规，7为办事指南)
+ *  一级栏目，对应值为(公路局=1,文献文档=27）
  */
 @property (nonatomic, strong) NSNumber *lmid;
 /**
- *  (5为政策法规，7为办事指南)
+ *  二级栏目，对应值为（公路局=5,文献文档=258）
  */
 @property (nonatomic, strong) NSNumber *lmid1;
 

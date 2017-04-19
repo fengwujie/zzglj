@@ -14,6 +14,7 @@
 #import "WJRollImageParam.h"
 #import "WJRollImageTool.h"
 #import "WJWebViewController.h"
+#import "WJNewsSingleViewController.h"
 
 @interface WJHomeViewController2 ()<ImagePlayerViewDelegate>
 @property (weak, nonatomic) IBOutlet ImagePlayerView *imagePlayerView;
@@ -85,6 +86,11 @@
 -(void)gljgkClick:(id)sender
 {
     WJLog(@"gljgk");
+    WJNewsSingleViewController *newsVC = [[WJNewsSingleViewController alloc] init];
+    newsVC.lmid = @1;
+    newsVC.lmid1 = @5;
+    newsVC.title = @"公路局概况";
+    [self.navigationController pushViewController:newsVC animated:YES];
 }
 -(void)dasgkClick:(id)sender
 {

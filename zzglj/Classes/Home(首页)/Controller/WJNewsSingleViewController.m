@@ -1,23 +1,23 @@
 //
-//  WJNewsCommonViewController.m
+//  WJNewsSingleViewController
 //  zzglj
 //
 //  Created by fengwujie on 16/1/6.
 //  Copyright © 2016年 vision-soft. All rights reserved.
 //
 
-#import "WJNewsCommonViewController.h"
+#import "WJNewsSingleViewController.h"
 #import "WJLoadMoreFooter.h"
 #import "WJNews.h"
-#import "WJNewsCommonCell.h"
+#import "WJNewsViewCell.h"
 #import "WJWebViewController.h"
 #import "WJNewsParam.h"
 #import "WJNewsReturn.h"
-#import "WJNewsTool.h"
+#import "WJNewsTools.h"
 #import "SCHttpClient.h"
 #import "MJExtension.h"
 
-@interface WJNewsCommonViewController ()
+@interface WJNewsSingleViewController ()
 /**
  *  新闻数组
  */
@@ -32,7 +32,7 @@
 @property (nonatomic, weak) WJLoadMoreFooter *footer;
 @end
 
-@implementation WJNewsCommonViewController
+@implementation WJNewsSingleViewController
 
 #pragma mark - 初始化
 - (NSMutableArray *)arrayNews
@@ -50,6 +50,14 @@
     
     self.tableView.backgroundColor = WJGlobalBg;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    UIView *tableHeadView = [[UIView alloc] init];
+    tableHeadView.backgroundColor = [UIColor clearColor];
+    tableHeadView.x = 0;
+    tableHeadView.y = 0;
+    tableHeadView.width = self.tableView.width;
+    tableHeadView.height = 10;
+    self.tableView.tableHeaderView = tableHeadView;
     
     [self setupRefresh];
 }
@@ -116,14 +124,15 @@
     // 1.封装请求参数
     WJNewsParam *param = [WJNewsParam param];
     param.lmid = self.lmid;
+    param.lmid1 = self.lmid1;
     WJNews *news = [self.arrayNews firstObject];
     if (news) {
 //        param.str =[NSString stringWithFormat: @" and datediff(day,indate,'%@')<0",news.Indate];
-        param.mindate = news.Indate;
+        param.minid = news.ID;
     }
     
     // 2.加载新闻列表
-    [WJNewsTool newsWithParam:param success:^(WJNewsReturn *result) {
+    [WJNewsTools newsWithParam:param success:^(WJNewsReturn *result) {
         // 获得最新的新闻News数组
         NSArray *newss = result.Details;
         
@@ -219,13 +228,14 @@
     // 1.封装请求参数
     WJNewsParam *param = [WJNewsParam param];
     param.lmid = self.lmid;
+    param.lmid1 = self.lmid1;
     WJNews *lastNews = [self.arrayNews lastObject];
     if (lastNews) {
 //        param.str =[NSString stringWithFormat: @" and datediff(day,indate,'%@')>0",lastNews.Indate];
-        param.maxdate = lastNews.Indate;
+        param.maxid = lastNews.ID;
     }
     // 2.加载新闻数据
-    [WJNewsTool newsWithParam:param success:^(WJNewsReturn *result) {
+    [WJNewsTools newsWithParam:param success:^(WJNewsReturn *result) {
         // 获得最新的新闻News数组
         NSArray *newss = result.Details;
         
@@ -257,10 +267,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    WJNewsCommonCell *cell = [WJNewsCommonCell cellWithTableView:tableView];
-    
+    WJNewsViewCell *cell = [WJNewsViewCell cellWithTableView:tableView];
     cell.news = self.arrayNews[indexPath.row];
-    [cell setIndexPath:indexPath rowsInSection: self.arrayNews.count];
+    //[cell setIndexPath:indexPath rowsInSection: self.arrayNews.count];
     return cell;
 }
 
@@ -271,6 +280,11 @@
     webVC.strUrl = news.realRedirectUrl;
     webVC.title = news.FTitle;
     [self.navigationController pushViewController:webVC animated:YES];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 80;
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
