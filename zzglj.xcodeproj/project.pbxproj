@@ -14,8 +14,6 @@
 		9F009DD91EA673C700C53392 /* WJRollImageParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F009DD21EA673C700C53392 /* WJRollImageParam.m */; };
 		9F009DDA1EA673C700C53392 /* WJRollImageReturn.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F009DD41EA673C700C53392 /* WJRollImageReturn.m */; };
 		9F009DDD1EA677D400C53392 /* WJNewsTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F009DDC1EA677D400C53392 /* WJNewsTools.m */; };
-		9F009DE31EA6827F00C53392 /* WJNewsMultipleTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F009DE21EA6827F00C53392 /* WJNewsMultipleTabViewController.m */; };
-		9F009DE51EA682D500C53392 /* WJNewsMultipleTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F009DE41EA682D500C53392 /* WJNewsMultipleTab.storyboard */; };
 		9F0CC95B1EA519370051E718 /* WJCalculatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0CC9481EA519370051E718 /* WJCalculatorViewController.m */; };
 		9F0CC95D1EA519370051E718 /* WJServicesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0CC94C1EA519370051E718 /* WJServicesViewController.m */; };
 		9F0CC9611EA519370051E718 /* WJLoadMoreFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0CC9571EA519370051E718 /* WJLoadMoreFooter.m */; };
@@ -49,6 +47,13 @@
 		9F9A20491EA7BBEB003A433F /* UIView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A20341EA7BBEB003A433F /* UIView+WebCache.m */; };
 		9F9A204A1EA7BBEB003A433F /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A20361EA7BBEB003A433F /* UIView+WebCacheOperation.m */; };
 		9F9A204E1EA7BFF4003A433F /* WJNewsViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F9A204D1EA7BFF4003A433F /* WJNewsViewCell.xib */; };
+		9FECE80F1EA8FE44002BB465 /* WJNewsSingleTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FECE80E1EA8FE44002BB465 /* WJNewsSingleTools.m */; };
+		9FECE8121EA8FE6E002BB465 /* WJNewsSingleParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FECE8111EA8FE6E002BB465 /* WJNewsSingleParam.m */; };
+		9FECE8151EA8FF91002BB465 /* WJNewsSingleView2Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FECE8141EA8FF91002BB465 /* WJNewsSingleView2Controller.m */; };
+		9FECE8221EA9118B002BB465 /* WJNewsViewCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FECE8211EA9118B002BB465 /* WJNewsViewCell2.m */; };
+		9FECE8281EA9127A002BB465 /* WJNewsViewCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FECE8271EA9127A002BB465 /* WJNewsViewCell2.xib */; };
+		9FECE82B1EA93334002BB465 /* WJNewsMultipleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FECE82A1EA93334002BB465 /* WJNewsMultipleViewController.m */; };
+		9FECE82D1EA9342A002BB465 /* WJNewsMultiple.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FECE82C1EA9342A002BB465 /* WJNewsMultiple.storyboard */; };
 		FD0C08671C3A9BE700F6E64A /* WJCommonArrowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0C085C1C3A9BE700F6E64A /* WJCommonArrowItem.m */; };
 		FD0C08681C3A9BE700F6E64A /* WJCommonCenterItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0C085E1C3A9BE700F6E64A /* WJCommonCenterItem.m */; };
 		FD0C08691C3A9BE700F6E64A /* WJCommonGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0C08601C3A9BE700F6E64A /* WJCommonGroup.m */; };
@@ -168,9 +173,6 @@
 		9F009DD41EA673C700C53392 /* WJRollImageReturn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJRollImageReturn.m; sourceTree = "<group>"; };
 		9F009DDB1EA677D400C53392 /* WJNewsTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJNewsTools.h; sourceTree = "<group>"; };
 		9F009DDC1EA677D400C53392 /* WJNewsTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJNewsTools.m; sourceTree = "<group>"; };
-		9F009DE11EA6827F00C53392 /* WJNewsMultipleTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJNewsMultipleTabViewController.h; sourceTree = "<group>"; };
-		9F009DE21EA6827F00C53392 /* WJNewsMultipleTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJNewsMultipleTabViewController.m; sourceTree = "<group>"; };
-		9F009DE41EA682D500C53392 /* WJNewsMultipleTab.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WJNewsMultipleTab.storyboard; sourceTree = "<group>"; };
 		9F0CC9471EA519370051E718 /* WJCalculatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJCalculatorViewController.h; sourceTree = "<group>"; };
 		9F0CC9481EA519370051E718 /* WJCalculatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJCalculatorViewController.m; sourceTree = "<group>"; };
 		9F0CC94B1EA519370051E718 /* WJServicesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJServicesViewController.h; sourceTree = "<group>"; };
@@ -236,6 +238,18 @@
 		9F9A20351EA7BBEB003A433F /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		9F9A20361EA7BBEB003A433F /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		9F9A204D1EA7BFF4003A433F /* WJNewsViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WJNewsViewCell.xib; sourceTree = "<group>"; };
+		9FECE80D1EA8FE44002BB465 /* WJNewsSingleTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJNewsSingleTools.h; sourceTree = "<group>"; };
+		9FECE80E1EA8FE44002BB465 /* WJNewsSingleTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJNewsSingleTools.m; sourceTree = "<group>"; };
+		9FECE8101EA8FE6E002BB465 /* WJNewsSingleParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJNewsSingleParam.h; sourceTree = "<group>"; };
+		9FECE8111EA8FE6E002BB465 /* WJNewsSingleParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJNewsSingleParam.m; sourceTree = "<group>"; };
+		9FECE8131EA8FF91002BB465 /* WJNewsSingleView2Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJNewsSingleView2Controller.h; sourceTree = "<group>"; };
+		9FECE8141EA8FF91002BB465 /* WJNewsSingleView2Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJNewsSingleView2Controller.m; sourceTree = "<group>"; };
+		9FECE8201EA9118B002BB465 /* WJNewsViewCell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJNewsViewCell2.h; sourceTree = "<group>"; };
+		9FECE8211EA9118B002BB465 /* WJNewsViewCell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJNewsViewCell2.m; sourceTree = "<group>"; };
+		9FECE8271EA9127A002BB465 /* WJNewsViewCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WJNewsViewCell2.xib; sourceTree = "<group>"; };
+		9FECE8291EA93334002BB465 /* WJNewsMultipleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJNewsMultipleViewController.h; sourceTree = "<group>"; };
+		9FECE82A1EA93334002BB465 /* WJNewsMultipleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJNewsMultipleViewController.m; sourceTree = "<group>"; };
+		9FECE82C1EA9342A002BB465 /* WJNewsMultiple.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WJNewsMultiple.storyboard; sourceTree = "<group>"; };
 		FD0C085B1C3A9BE700F6E64A /* WJCommonArrowItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJCommonArrowItem.h; sourceTree = "<group>"; };
 		FD0C085C1C3A9BE700F6E64A /* WJCommonArrowItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJCommonArrowItem.m; sourceTree = "<group>"; };
 		FD0C085D1C3A9BE700F6E64A /* WJCommonCenterItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJCommonCenterItem.h; sourceTree = "<group>"; };
@@ -442,6 +456,8 @@
 				9F009DCB1EA673C700C53392 /* WJNewsParam.m */,
 				9F009DCC1EA673C700C53392 /* WJNewsReturn.h */,
 				9F009DCD1EA673C700C53392 /* WJNewsReturn.m */,
+				9FECE8101EA8FE6E002BB465 /* WJNewsSingleParam.h */,
+				9FECE8111EA8FE6E002BB465 /* WJNewsSingleParam.m */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -535,6 +551,8 @@
 				9F4B12B41EA286D400DC4DDA /* WJRollImageTool.m */,
 				9F009DDB1EA677D400C53392 /* WJNewsTools.h */,
 				9F009DDC1EA677D400C53392 /* WJNewsTools.m */,
+				9FECE80D1EA8FE44002BB465 /* WJNewsSingleTools.h */,
+				9FECE80E1EA8FE44002BB465 /* WJNewsSingleTools.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -893,8 +911,10 @@
 				FDDE45AE1C3A566100C39457 /* WJHomeViewController.m */,
 				9F35BBD51E955E610026FAAB /* WJHomeViewController2.h */,
 				9F35BBD61E955E610026FAAB /* WJHomeViewController2.m */,
-				9F009DE11EA6827F00C53392 /* WJNewsMultipleTabViewController.h */,
-				9F009DE21EA6827F00C53392 /* WJNewsMultipleTabViewController.m */,
+				9FECE8131EA8FF91002BB465 /* WJNewsSingleView2Controller.h */,
+				9FECE8141EA8FF91002BB465 /* WJNewsSingleView2Controller.m */,
+				9FECE8291EA93334002BB465 /* WJNewsMultipleViewController.h */,
+				9FECE82A1EA93334002BB465 /* WJNewsMultipleViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -902,6 +922,9 @@
 		FDDE455F1C3A4E5A00C39457 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9FECE8201EA9118B002BB465 /* WJNewsViewCell2.h */,
+				9FECE8211EA9118B002BB465 /* WJNewsViewCell2.m */,
+				9FECE8271EA9127A002BB465 /* WJNewsViewCell2.xib */,
 				FD10A63F1C48E43A00DD8FB8 /* WJGridButton.h */,
 				FD10A6401C48E43A00DD8FB8 /* WJGridButton.m */,
 				FDB5EBC61C3F9F080087517D /* WJHomeButton.h */,
@@ -911,10 +934,10 @@
 				FDB5EBCD1C3FB9B10087517D /* WJHomeButtonSmall.h */,
 				FDB5EBCE1C3FB9B10087517D /* WJHomeButtonSmall.m */,
 				9F35BBD31E955DF00026FAAB /* WJHome.storyboard */,
-				9F009DE41EA682D500C53392 /* WJNewsMultipleTab.storyboard */,
 				9F9A1FCA1EA7B127003A433F /* WJNewsViewCell.h */,
 				9F9A1FCB1EA7B127003A433F /* WJNewsViewCell.m */,
 				9F9A204D1EA7BFF4003A433F /* WJNewsViewCell.xib */,
+				9FECE82C1EA9342A002BB465 /* WJNewsMultiple.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1209,12 +1232,13 @@
 				FDB5EBCC1C3FB98C0087517D /* WJHomeButtonSmall.xib in Resources */,
 				9F9A204E1EA7BFF4003A433F /* WJNewsViewCell.xib in Resources */,
 				FDCF788F1C3BB42000B98AD0 /* MBProgressHUD.bundle in Resources */,
-				9F009DE51EA682D500C53392 /* WJNewsMultipleTab.storyboard in Resources */,
 				FD8D866A1C3B6DC50005C75F /* MJRefresh.bundle in Resources */,
 				FDA18FBF1C3A47E800DFA1D1 /* Main.storyboard in Resources */,
+				9FECE82D1EA9342A002BB465 /* WJNewsMultiple.storyboard in Resources */,
 				9F35BBD41E955DF00026FAAB /* WJHome.storyboard in Resources */,
 				9F0CC9621EA519370051E718 /* WJLoadMoreFooter.xib in Resources */,
 				FDB5EBCA1C3FAC630087517D /* WJHomeButton.xib in Resources */,
+				9FECE8281EA9127A002BB465 /* WJNewsViewCell2.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1246,6 +1270,7 @@
 				9F9A20491EA7BBEB003A433F /* UIView+WebCache.m in Sources */,
 				FD8D868A1C3B8BB10005C75F /* MJProperty.m in Sources */,
 				FDDE458D1C3A4E5A00C39457 /* UIView+Extension.m in Sources */,
+				9FECE8121EA8FE6E002BB465 /* WJNewsSingleParam.m in Sources */,
 				9F9A203F1EA7BBEB003A433F /* SDWebImageDownloader.m in Sources */,
 				FD8D866C1C3B6DC50005C75F /* UIScrollView+MJExtension.m in Sources */,
 				FDDE45891C3A4E5A00C39457 /* NSString+Emoji.m in Sources */,
@@ -1261,6 +1286,7 @@
 				FDA808351C41760F006F82C9 /* AFURLResponseSerialization.m in Sources */,
 				FDA8082E1C41760F006F82C9 /* AFHTTPRequestOperation.m in Sources */,
 				9F9A20391EA7BBEB003A433F /* NSData+ImageContentType.m in Sources */,
+				9FECE8221EA9118B002BB465 /* WJNewsViewCell2.m in Sources */,
 				9F9A1FC91EA7A117003A433F /* WJNewsSingleViewController.m in Sources */,
 				FD8D86971C3B90960005C75F /* WJUpdateTool.m in Sources */,
 				9F8875A61EA7E43D006C35F6 /* UILabel+Extension.m in Sources */,
@@ -1315,6 +1341,8 @@
 				FD8D86941C3B90660005C75F /* WJSysTool.m in Sources */,
 				FD8D866E1C3B6DC50005C75F /* UIView+MJExtension.m in Sources */,
 				9F9A20481EA7BBEB003A433F /* UIImageView+WebCache.m in Sources */,
+				9FECE8151EA8FF91002BB465 /* WJNewsSingleView2Controller.m in Sources */,
+				9FECE82B1EA93334002BB465 /* WJNewsMultipleViewController.m in Sources */,
 				9F9A20381EA7BBEB003A433F /* MKAnnotationView+WebCache.m in Sources */,
 				FD8D86641C3B6DC50005C75F /* MJRefreshBackGifFooter.m in Sources */,
 				9F9A20451EA7BBEB003A433F /* UIImage+MultiFormat.m in Sources */,
@@ -1333,7 +1361,6 @@
 				FDDE45AC1C3A564D00C39457 /* WJMineViewController.m in Sources */,
 				FDA18FB61C3A47E800DFA1D1 /* main.m in Sources */,
 				FD0C086C1C3A9BE700F6E64A /* WJCommonSwitchItem.m in Sources */,
-				9F009DE31EA6827F00C53392 /* WJNewsMultipleTabViewController.m in Sources */,
 				FDDE458C1C3A4E5A00C39457 /* UIImage+Extension.m in Sources */,
 				9F9A20431EA7BBEB003A433F /* UIButton+WebCache.m in Sources */,
 				FD7533911C3A9DD400660F3B /* WJCommonViewController.m in Sources */,
@@ -1353,6 +1380,7 @@
 				FD8D86631C3B6DC50005C75F /* MJRefreshAutoStateFooter.m in Sources */,
 				FD0C08691C3A9BE700F6E64A /* WJCommonGroup.m in Sources */,
 				9F009DDD1EA677D400C53392 /* WJNewsTools.m in Sources */,
+				9FECE80F1EA8FE44002BB465 /* WJNewsSingleTools.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,5 +23,5 @@
 /**
  *  请求方法名，必填，各自调用类的时候赋值，如新闻列表自己的WJNewsTool类中
  */
-@property (nonatomic, copy) NSString *methodName;
+//@property (nonatomic, copy) NSString *methodName;
 @end

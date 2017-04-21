@@ -15,6 +15,8 @@
 #import "WJRollImageTool.h"
 #import "WJWebViewController.h"
 #import "WJNewsSingleViewController.h"
+#import "WJNewsSingleView2Controller.h"
+#import "WJNewsMultipleViewController.h"
 
 @interface WJHomeViewController2 ()<ImagePlayerViewDelegate>
 @property (weak, nonatomic) IBOutlet ImagePlayerView *imagePlayerView;
@@ -111,18 +113,45 @@
 -(void)wxdaClick:(id)sender
 {
     WJLog(@"wxda");
+    WJNewsSingleViewController *newsVC = [[WJNewsSingleViewController alloc] init];
+    newsVC.lmid = @27;
+    newsVC.lmid1 = @258;
+    newsVC.title = @"文献档案";
+    [self.navigationController pushViewController:newsVC animated:YES];
 }
 -(void)flfgClick:(id)sender
 {
     WJLog(@"flfg");
+    //获取storyboard: 通过bundle根据storyboard的名字来获取我们的storyboard,
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"WJNewsMultiple" bundle:nil];
+    // 从Storyboard上按照identifier获取指定的界面（VC），identifier必须是唯一的
+    WJNewsMultipleViewController *newsVC = [storyboard instantiateViewControllerWithIdentifier:@"WJNewsMultiple_StoryboardID"];
+    newsVC.arraySegmentTitle = [NSArray arrayWithObjects:@"公路法规",@"档案法规",nil];
+    newsVC.lmid = @10;
+    newsVC.arrayLmid1 = [NSArray arrayWithObjects:@11,@14,nil];
+    newsVC.title = @"法律法规";
+    [self.navigationController pushViewController:newsVC animated:YES];
 }
 -(void)sxdaClick:(id)sender
 {
     WJLog(@"sxda");
+    //获取storyboard: 通过bundle根据storyboard的名字来获取我们的storyboard,
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"WJNewsMultiple" bundle:nil];
+    // 从Storyboard上按照identifier获取指定的界面（VC），identifier必须是唯一的
+    WJNewsMultipleViewController *newsVC = [storyboard instantiateViewControllerWithIdentifier:@"WJNewsMultiple_StoryboardID"];
+    newsVC.arraySegmentTitle = [NSArray arrayWithObjects:@"公路照片",@"公务活动",nil];
+    newsVC.lmid = @17;
+    newsVC.arrayLmid1 = [NSArray arrayWithObjects:@204,@202,nil];
+    newsVC.title = @"声像档案";
+    [self.navigationController pushViewController:newsVC animated:YES];
 }
 -(void)daztClick:(id)sender
 {
     WJLog(@"dazt");
+    WJNewsSingleView2Controller *newsVC = [[WJNewsSingleView2Controller alloc] init];
+    newsVC.lmid = @218;
+    newsVC.title = @"档案专题";
+    [self.navigationController pushViewController:newsVC animated:YES];
 }
 
 - (void)setupImagePlayerView

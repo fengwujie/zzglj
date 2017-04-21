@@ -6,20 +6,20 @@
 //  Copyright © 2017年 vision-soft. All rights reserved.
 //
 
-#import "WJNewsViewCell.h"
+#import "WJNewsViewCell2.h"
 #import "UIImageView+WebCache.h"
 #import "UILabel+Extension.h"
-@interface WJNewsViewCell ()
+@interface WJNewsViewCell2 ()
 @property (weak, nonatomic) IBOutlet UIImageView *News_Litpic;
 @property (weak, nonatomic) IBOutlet UILabel *News_FTitle;
 
 @end
-@implementation WJNewsViewCell
+@implementation WJNewsViewCell2
 
 + (instancetype)cellWithTableView:(UITableView *)tableView
 {
-    static NSString *ID = @"News";
-    WJNewsViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    static NSString *ID = @"News2";
+    WJNewsViewCell2 *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (cell == nil) {
         //cell = [[WJNewsViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
         //通过xib的名称加载自定义的cell
@@ -68,7 +68,6 @@
     frame.size.height -= frame.origin.x;
     [super setFrame:frame];
 }
-
 - (void)layoutSubviews
 {
     [super layoutSubviews];
@@ -82,7 +81,6 @@
     self.News_FTitle.height = self.contentView.height;
     self.News_FTitle.width = self.contentView.width - self.News_Litpic.width - 10*2;
 }
-
 #pragma mark - setter
 - (void)setIndexPath:(NSIndexPath *)indexPath rowsInSection:(NSUInteger)rows
 {
