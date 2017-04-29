@@ -95,7 +95,13 @@
     }
     return self;
 }
-
+//- (void)setFrame:(CGRect)frame
+//{
+//    frame.origin.x = 10;//这里间距为10，可以根据自己的情况调整
+//    frame.size.width -= 2 * frame.origin.x;
+//    //frame.size.height -= frame.origin.x;
+//    [super setFrame:frame];
+//}
 #pragma mark - 调整子控件的位置
 - (void)layoutSubviews
 {

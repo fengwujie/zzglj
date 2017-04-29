@@ -12,9 +12,11 @@
 #import "WJCommonLabelItem.h"
 #import "WJUpdateTool.h"
 #import "WJSysTool.h"
+#import "SDImageCache.h"
 
 typedef enum {
-    WJSettingsAlertViewTypeLogout // 退出程序
+    WJSettingsAlertViewTypeLogout, // 退出程序
+    WJSettingsAlertViewTypeClearCache // 清除缓存
 } WJSettingsAlertViewType;
 
 @interface WJSettingsViewController ()<UIAlertViewDelegate>
@@ -26,7 +28,6 @@ typedef enum {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     //self.view.backgroundColor = WJRandomColor;
     [self setupGroups];
     [self setupFooter];
@@ -46,6 +47,7 @@ typedef enum {
     
     // 3.设置尺寸(tableFooterView和tableHeaderView的宽度跟tableView的宽度一样)
     logout.height = 35;
+    logout.width = self.tableView.width - 20;
     
     self.tableView.tableFooterView = logout;
 }
@@ -55,6 +57,7 @@ typedef enum {
 - (void)setupGroups
 {
     [self setupGroup0];
+    [self setupGroup1];
 }
 
 - (void)setupGroup0
@@ -76,6 +79,44 @@ typedef enum {
     group.items = @[version];//,update
 }
 
+- (void)setupGroup1
+{
+    // 1.创建组
+    WJCommonGroup *group1 = [WJCommonGroup group];
+    [self.groups addObject:group1];
+    
+    // 2.设置组的所有行数据
+    WJCommonLabelItem *cacheItem = [WJCommonLabelItem itemWithTitle:@"清除缓存"];
+    cacheItem.operation = ^{
+        WJLog(@"清除缓存");
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@"确定要清除缓存吗" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        alertView.tag = WJSettingsAlertViewTypeClearCache;
+        [alertView show];
+    };
+    
+//    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+//    [queue addOperationWithBlock:^{
+//        SDImageCache *cache = [SDImageCache sharedImageCache];
+//        NSUInteger cacheCount = cache.getDiskCount;
+//        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+//            cacheItem.text = [NSString stringWithFormat:@"%.2fMB",cacheCount/1024.0/1024.0];
+//            [self.tableView reloadData];
+//        }];
+//    }];
+    cacheItem.text = [self getCacheSize];
+    
+//    NSString *currentVersion = [NSBundle mainBundle].infoDictionary[@"CFBundleShortVersionString"];
+//    version.text =[NSString stringWithFormat:@"版本号：%@", currentVersion] ;
+
+    group1.items = @[cacheItem];
+}
+
+-(NSString *)getCacheSize
+{
+    SDImageCache *cache = [SDImageCache sharedImageCache];
+    NSUInteger cacheCount = cache.getSize;
+    return [NSString stringWithFormat:@"%.2fMB",cacheCount/1024.0/1024.0];
+}
 /** 退出程序 */
 -(void) logout
 {
@@ -91,6 +132,16 @@ typedef enum {
         if (buttonIndex == 1) {
 //            [self exitApplication];
             [WJSysTool exitApplication];
+        }
+    }
+    else if (alertView.tag == WJSettingsAlertViewTypeClearCache) {
+        if (buttonIndex == 1) {
+             [[SDImageCache sharedImageCache] clearDiskOnCompletion:^{
+                 WJCommonGroup *group = (WJCommonGroup*)self.groups[1];
+                 WJCommonLabelItem * item = (WJCommonLabelItem *)group.items[0];
+                 item.text = [self getCacheSize];
+                 [self.tableView reloadData];
+             }];
         }
     }
 }
