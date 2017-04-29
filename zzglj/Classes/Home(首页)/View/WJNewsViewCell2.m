@@ -71,9 +71,9 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    self.News_Litpic.x = 0;
-    self.News_Litpic.y = 0;
-    self.News_Litpic.height = self.contentView.height;
+    self.News_Litpic.x = 2;
+    self.News_Litpic.y = 2;
+    self.News_Litpic.height = self.contentView.height-4;
     self.News_Litpic.width = self.News_Litpic.height;
     
     self.News_FTitle.x = self.News_Litpic.width + 10;

@@ -112,10 +112,21 @@
 }
 -(void)wxdaClick:(id)sender
 {
+    /*
     WJLog(@"wxda");
     WJNewsSingleViewController *newsVC = [[WJNewsSingleViewController alloc] init];
     newsVC.lmid = @27;
     newsVC.lmid1 = @258;
+    newsVC.title = @"文献档案";
+    [self.navigationController pushViewController:newsVC animated:YES];
+    */
+    //获取storyboard: 通过bundle根据storyboard的名字来获取我们的storyboard,
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"WJNewsMultiple" bundle:nil];
+    // 从Storyboard上按照identifier获取指定的界面（VC），identifier必须是唯一的
+    WJNewsMultipleViewController *newsVC = [storyboard instantiateViewControllerWithIdentifier:@"WJNewsMultiple_StoryboardID"];
+    newsVC.arraySegmentTitle = [NSArray arrayWithObjects:@"编年大事记",nil];
+    newsVC.lmid = @27;
+    newsVC.arrayLmid1 = [NSArray arrayWithObjects:@258,nil];
     newsVC.title = @"文献档案";
     [self.navigationController pushViewController:newsVC animated:YES];
 }
