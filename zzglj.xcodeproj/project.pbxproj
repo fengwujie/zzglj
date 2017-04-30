@@ -1191,6 +1191,7 @@
 					FDA18FB01C3A47E800DFA1D1 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = 7XD2XM58GT;
+						ProvisioningStyle = Automatic;
 					};
 					FDA18FC91C3A47E800DFA1D1 = {
 						CreatedOnToolsVersion = 7.2;
@@ -1529,8 +1530,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: xie yongyuan (5ZEAZW2YX9)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: xie yongyuan (5ZEAZW2YX9)";
-				DEVELOPMENT_TEAM = 7XD2XM58GT;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/zzglj/PrefixHeader.pch";
 				INFOPLIST_FILE = zzglj/Info.plist;
@@ -1539,8 +1540,8 @@
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.vision-soft.zzglj";
 				PRODUCT_NAME = zzglj;
-				PROVISIONING_PROFILE = "a943ecb9-1c7e-411a-a709-f0c52c400433";
-				PROVISIONING_PROFILE_SPECIFIER = zzglj_Development;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1551,8 +1552,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Zhangzhou Vision Information Technology Co., Ltd. (7XD2XM58GT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Zhangzhou Vision Information Technology Co., Ltd. (7XD2XM58GT)";
-				DEVELOPMENT_TEAM = 7XD2XM58GT;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/zzglj/PrefixHeader.pch";
 				INFOPLIST_FILE = zzglj/Info.plist;
@@ -1561,8 +1562,8 @@
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.vision-soft.zzglj";
 				PRODUCT_NAME = zzglj;
-				PROVISIONING_PROFILE = "a943ecb9-1c7e-411a-a709-f0c52c400433";
-				PROVISIONING_PROFILE_SPECIFIER = zzglj_Distribution;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
