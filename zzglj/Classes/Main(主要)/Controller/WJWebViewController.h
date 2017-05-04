@@ -20,4 +20,8 @@
  */
 @property (nonatomic, assign, getter=isMainWeb) BOOL bMainWeb;
 
+/**
+ *  是否加载在导航控制器上
+ */
+@property (nonatomic, assign, getter=isNavigationController) BOOL bNavigationController;
 @end

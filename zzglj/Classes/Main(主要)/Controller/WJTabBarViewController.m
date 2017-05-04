@@ -73,24 +73,24 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"WJHome" bundle:nil];
     // 从Storyboard上按照identifier获取指定的界面（VC），identifier必须是唯一的
     WJHomeViewController2 *home = [storyboard instantiateViewControllerWithIdentifier:@"WJHome_StoryboardID"];
-    [self addOneChlildVc:home title:@"首页" imageName:@"ic_tab_home_normal" selectedImageName:@"ic_tab_home_press"];
+    [self addOneChlildVc:home title:@"首页" imageName:@"ic_tab_home_normal" selectedImageName:@"ic_tab_home_press" bNavigationController:YES];
     self.home = home;
     self.lastSelectedViewContoller = home;
     
     WJMineViewController *mine = [[WJMineViewController alloc] init];
     mine.strUrl = WJUrlGRZX;
     mine.bMainWeb = YES;
-    [self addOneChlildVc:mine title:@"个人中心" imageName:@"ic_tab_account_normal" selectedImageName:@"ic_tab_account_press"];
+    [self addOneChlildVc:mine title:@"个人中心" imageName:@"ic_tab_account_normal" selectedImageName:@"ic_tab_account_press" bNavigationController:NO];
     self.mine= mine;
     
     WJContactUsViewController *contactus = [[WJContactUsViewController alloc] init];
     contactus.strUrl = WJUrlLXWM;
     contactus.bMainWeb = YES;
-    [self addOneChlildVc:contactus title:@"联系我们" imageName:@"ic_tab_contact_normal" selectedImageName:@"ic_tab_contact_press"];
+    [self addOneChlildVc:contactus title:@"联系我们" imageName:@"ic_tab_contact_normal" selectedImageName:@"ic_tab_contact_press" bNavigationController:YES];
     self.contactus = contactus;
     
     WJSettingsViewController *settings = [[WJSettingsViewController alloc] init];
-    [self addOneChlildVc:settings title:@"设置" imageName:@"ic_tab_setting_normal" selectedImageName:@"ic_tab_setting_press"];
+    [self addOneChlildVc:settings title:@"设置" imageName:@"ic_tab_setting_normal" selectedImageName:@"ic_tab_setting_press" bNavigationController:YES];
     self.settings = settings;
 }
 
@@ -101,8 +101,9 @@
  *  @param title             标题
  *  @param imageName         图标
  *  @param selectedImageName 选中的图标
+ *  @param bNavigationController 是否为导航窗体
  */
-- (void)addOneChlildVc:(UIViewController *)childVc title:(NSString *)title imageName:(NSString *)imageName selectedImageName:(NSString *)selectedImageName
+- (void)addOneChlildVc:(UIViewController *)childVc title:(NSString *)title imageName:(NSString *)imageName selectedImageName:(NSString *)selectedImageName bNavigationController:(BOOL)bNavigationController
 {
     // 设置标题
     childVc.title = title;
@@ -135,9 +136,14 @@
     }
     childVc.tabBarItem.selectedImage = selectedImage;
     
-    // 添加为tabbar控制器的子控制器
-    WJNavigationController *nav = [[WJNavigationController alloc] initWithRootViewController:childVc];
-    [self addChildViewController:nav];
+    if (bNavigationController) {
+        // 添加为tabbar控制器的子控制器
+        WJNavigationController *nav = [[WJNavigationController alloc] initWithRootViewController:childVc];
+        [self addChildViewController:nav];
+    }
+    else{
+        [self addChildViewController:childVc];
+    }
 }
 
 - (void)viewWillLayoutSubviews{

@@ -22,7 +22,11 @@
     
     UIWebView *webView = [[UIWebView alloc] init];
     [self.view addSubview:webView];
-    float h = self.view.height - 64 ;
+    float h =self.view.height ;// self.view.height - 64 ;
+    if(self.bNavigationController)
+    {
+        h -=64;
+    }
     if (self.isMainWeb) {
         h -= self.tabBarController.tabBar.height;
     }
