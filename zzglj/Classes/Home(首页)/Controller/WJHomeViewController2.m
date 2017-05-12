@@ -100,6 +100,7 @@
     WJWebViewController *webVC = [[WJWebViewController alloc] init];
     webVC.strUrl = WJUrlDASGK;
     webVC.title = @"档案室概况";
+    webVC.bNavigationController = YES;
     [self.navigationController pushViewController:webVC animated:YES];
 }
 -(void)dacxClick:(id)sender

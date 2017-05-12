@@ -468,6 +468,7 @@
     WJWebViewController *webVC = [[WJWebViewController alloc] init];
     webVC.strUrl = news.realRedirectUrl;
     webVC.title = news.FTitle;
+    webVC.bNavigationController = YES;
     [self.navigationController pushViewController:webVC animated:YES];
 }
 
