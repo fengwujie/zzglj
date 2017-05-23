@@ -74,6 +74,13 @@
     for (int i = 0; i<self.arraySegmentTitle.count; i++)  {
         [self.segmentControl setTitle:[self.arraySegmentTitle objectAtIndex:i] forSegmentAtIndex:i];
     }
+    /*
+    if(self.arraySegmentTitle.count == 1)
+    {
+        [self.segmentControl removeSegmentAtIndex:1 animated:YES];
+        self.segmentControl.width = self.segmentControl.width *0.5;
+    }
+     */
     UIFont *font = [UIFont systemFontOfSize:15.0f];
     //NSDictionary *attributes = [NSDictionary dictionaryWithObject:font
     //                                                       forKey:UITextAttributeFont];
@@ -86,9 +93,15 @@
     NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor blueColor],UITextAttributeTextColor,font,UITextAttributeFont,nil];
     [self.segmentControl setTitleTextAttributes:dic forState:UIControlStateSelected];
     
-    NSDictionary *dics = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor grayColor],UITextAttributeTextColor,font,UITextAttributeFont,nil];
-    [self.segmentControl setTitleTextAttributes:dics forState:UIControlStateNormal];
-    
+    if (self.arraySegmentTitle.count>1) {
+        NSDictionary *dics = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor grayColor],UITextAttributeTextColor,font,UITextAttributeFont,nil];
+        [self.segmentControl setTitleTextAttributes:dics forState:UIControlStateNormal];
+    }
+    else
+    {
+        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor blueColor],UITextAttributeTextColor,font,UITextAttributeFont,nil];
+        [self.segmentControl setTitleTextAttributes:dic forState:UIControlStateNormal];
+    }
     [self.segmentControl addTarget:self action:@selector(segmentIndexDidChange:) forControlEvents:UIControlEventValueChanged];
 }
 
@@ -115,25 +128,26 @@
             break;
             
         case 1:
+            if (self.arraySegmentTitle.count>1) {
             
-            self.tableViewLeft.hidden=YES;
-            
-            self.tableViewRight.hidden=NO;
-            
-            self.segmentControl.selectedSegmentIndex=1;
-            
-            //self.tag = 1;
-            
-            //[self.tableViewRight reloadData];
-            if (!self.bLoadRight) {
-                self.bLoadRight = YES;
-                // 让刷新控件自动进入刷新状态
-                [self.refreshControlRight beginRefreshing];
+                self.tableViewLeft.hidden=YES;
                 
-                // 加载数据
-                [self refreshControlStateChange:self.refreshControlRight];
+                self.tableViewRight.hidden=NO;
+                
+                self.segmentControl.selectedSegmentIndex=1;
+                
+                //self.tag = 1;
+                
+                //[self.tableViewRight reloadData];
+                if (!self.bLoadRight) {
+                    self.bLoadRight = YES;
+                    // 让刷新控件自动进入刷新状态
+                    [self.refreshControlRight beginRefreshing];
+                    
+                    // 加载数据
+                    [self refreshControlStateChange:self.refreshControlRight];
+                }
             }
-            
             break;
             
         default:
@@ -317,7 +331,7 @@
     if (count) {
         label.text = [NSString stringWithFormat:@"共有%d条新的数据", count];
     } else {
-        label.text = @"没有最新的数据";
+        label.text = @"数据已加载完成";
     }
     
     // 3.设置背景
@@ -464,7 +478,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    WJNews *news = self.arrayNewsLeft[indexPath.row];
+    WJNews *news =self.segmentControl.selectedSegmentIndex == 0 ? self.arrayNewsLeft[indexPath.row] : self.arrayNewsRight[indexPath.row];
     WJWebViewController *webVC = [[WJWebViewController alloc] init];
     webVC.strUrl = news.realRedirectUrl;
     webVC.title = news.FTitle;

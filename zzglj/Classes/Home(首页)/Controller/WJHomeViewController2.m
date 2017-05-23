@@ -109,6 +109,7 @@
     WJWebViewController *webVC = [[WJWebViewController alloc] init];
     webVC.strUrl = WJUrlDACX;
     webVC.title = @"档案查询";
+    webVC.bNavigationController = YES;
     [self.navigationController pushViewController:webVC animated:YES];
 }
 -(void)wxdaClick:(id)sender

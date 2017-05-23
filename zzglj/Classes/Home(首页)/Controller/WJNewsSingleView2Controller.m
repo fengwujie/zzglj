@@ -174,7 +174,7 @@
     if (count) {
         label.text = [NSString stringWithFormat:@"共有%d条新的数据", count];
     } else {
-        label.text = @"没有最新的数据";
+        label.text = @"数据已加载完成";
     }
     
     // 3.设置背景

@@ -53,7 +53,7 @@
 
 #define WJUrlDASGK @"http://42.96.167.141:8012/app/Mobile/Normal/Content.aspx?NewsId=2"
 #define WJUrlDACX @"http://42.96.167.141:8012/App/mobile/ArchFind/"
-#define WJUrlGRZX @"http://42.96.167.141:8012/app/Mobile/Normal/login.html"
+#define WJUrlGRZX @"http://42.96.167.141:8012/app/Mobile/Normal/userInfo/Personal.aspx"
 #define WJUrlLXWM @"http://42.96.167.141:8012/app/Mobile/Normal/Content.aspx?NewsId=3"
 #define WJColorTQZN WJColor(31, 193, 179);
 /** 政策法规 */
