@@ -131,6 +131,7 @@ typedef enum {
     if (alertView.tag == WJSettingsAlertViewTypeLogout) {
         if (buttonIndex == 1) {
 //            [self exitApplication];
+            [self cleanCacheAndCookie];
             [WJSysTool exitApplication];
         }
     }
@@ -145,6 +146,23 @@ typedef enum {
         }
     }
 }
+
+/**清除缓存和cookie*/
+- (void)cleanCacheAndCookie{
+   //清除cookies
+   NSHTTPCookie *cookie;
+    NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    for (cookie in [storage cookies]){
+        [storage deleteCookie:cookie];
+    }
+   //清除UIWebView的缓存
+    [[NSURLCache sharedURLCache] removeAllCachedResponses];
+    NSURLCache * cache = [NSURLCache sharedURLCache];
+    [cache removeAllCachedResponses];
+    [cache setDiskCapacity:0];
+   [cache setMemoryCapacity:0];
+}
+
 
 /*
 - (void)exitApplication {
